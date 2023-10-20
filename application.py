@@ -3,7 +3,7 @@ import requests
 import datetime
 import time
 from cs50 import SQL
-#test3
+
 app = Flask (__name__)
 
 # Configure CS50 Library to use SQLite database
