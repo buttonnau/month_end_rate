@@ -2,7 +2,7 @@ from flask import Flask, render_template, request
 import requests
 import datetime
 import time
-from cs50 import SQL
+import sqlite3
 
 app = Flask (__name__)
 
