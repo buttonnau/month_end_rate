@@ -4,6 +4,9 @@ import datetime
 import time
 import sqlite3
 
+#set FLASK_APP=application.py
+#flask run
+
 app = Flask (__name__)
 
 # Configure CS50 Library to use SQLite database
