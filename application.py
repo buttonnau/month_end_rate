@@ -7,7 +7,7 @@ import sqlite3
 app = Flask (__name__)
 
 # Configure CS50 Library to use SQLite database
-db = SQL("sqlite:///finance.db")
+db = sqlite3.connect("finance.db")
 
 @app.route("/")
 def buy():
@@ -62,10 +62,9 @@ def index():
             #url = "https://web-api.coinmarketcap.com/v1/cryptocurrency/ohlcv/historical?convert=USD&slug=bitcoin&time_end=1606262400&time_start=1603324800"
             response = requests.get(url)
             stock = response.json()
+            #print("stock", stock)
             hash = stock["data"]
             hashs.append(hash)
-
-
 
         #db.execute("INSERT INTO hello (address, currency, balance) VALUES (:address, :currency, :balance)", address=stock["address"], currency="ETH", balance=stock["ETH"]["balance"])
 
