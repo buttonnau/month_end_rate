@@ -1,0 +1,42 @@
+<html>
+    <body>
+
+    <table>
+          <thead>
+            <tr>
+              <th scope="col">sym</th>
+              <th scope="col">date</th>
+              <th scope="col">open</th>
+              <th scope="col">high</th>
+              <th scope="col">low</th>
+              <th scope="col">close</th>
+              <th scope="col">vol</th>
+              <th scope="col">mkt_cap</th>
+
+            </tr>
+          </thead>
+          <tbody>
+
+
+                {% for i in hashs%}
+                    {% for j in i["quotes"]%}
+                      <tr>
+                        <td>{{i["symbol"]}}</td>
+                        <td>{{j["quote"]["USD"]["timestamp"]}}</td>
+                        <td>{{j["quote"]["USD"]["open"]}}</td>
+                        <td>{{j["quote"]["USD"]["high"]}}</td>
+                        <td>{{j["quote"]["USD"]["low"]}}</td>
+                        <td>{{j["quote"]["USD"]["close"]}}</td>
+                        <td>{{j["quote"]["USD"]["volume"]}}</td>
+                        <td>{{j["quote"]["USD"]["market_cap"]}}</td>
+                      </tr>
+                    {% endfor %}
+                {% endfor %}
+
+
+
+          </tbody>
+        </table>
+
+    </body>
+</html>

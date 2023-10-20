@@ -1,0 +1,37 @@
+<html>
+    <body>
+
+    <table>
+          <thead>
+            <tr>
+              <th scope="col">address</th>
+              <th scope="col">currency</th>
+              <th scope="col">balance</th>
+            </tr>
+          </thead>
+          <tbody>
+
+                <tr>
+                    <td>{{ stocks["address"] }}</td>
+                    <td>ETH</td>
+                    <td>{{ stocks["ETH"]["balance"] }}</td>
+                </tr>
+
+                {% for i in stocks["tokens"]%}
+                <tr>
+                    <td>{{ stocks["address"] }}</td>
+                    <td>{{ i["tokenInfo"]['symbol'] }}</td>
+
+                    {% if i["tokenInfo"]['symbol'] == 'USDT' %}
+                      <td>{{ i['balance']/1000000 }}</td>
+                    {% else %}
+                      <td>{{ i['balance']/1000000000000000000 }}</td>
+                    {% endif %}
+
+                </tr>
+                {% endfor %}
+          </tbody>
+        </table>
+
+    </body>
+</html>
